@@ -12,41 +12,48 @@ win = Tk()
 win.title("LED Toggler")
 myFont = tkinter.font.Font(family= "hello", size = 12, weight = "bold")
 
+def toggle_leds(red, white, green):
+	if red == 1: 
+		red.on()
+		redled["text"] = "RED LED ON"
+	else:
+		red.off()
+		redled["text"] = "RED LED OFF"
+		
+	if white == 1:
+		white.on()
+		whiteled["text"] = "WHITE LED ON"
+	else:
+		white.off()
+		whiteled["text"] = "WHITE LED OFF"
+		
+	if green == 1:
+		green.on()
+		greenled["text"] = "GREEN LED ON"
+	else:
+		green.off()
+		greenled["text"] = "GREEN LED OFF"
+		
 def ledToggle():
     if red.is_lit:
-        red.off()
-        redled["text"]= "RED LED OFF"
+	toggle_leds(0,0,0)
     else:
-        red.on()
-        white.off()
-        whiteled["text"] = "WHITE LED OFF"        
-        green.off()
-        greenled["text"] = "GREEN LED OFF"
-        redled["text"] = "RED LED ON"
+	toggle_leds(1,0,0)
+
 
 def ledToggle1():
 	if green.is_lit:
-		green.off()
-		greenled["text"] = "GREEN LED OFF"
+		toggle_leds(0,0,0)
 	else:
-		green.on()
-		white.off()
-		whiteled["text"] = "WHITE LED OFF"
-		red.off()
-		redled["text"]= "RED LED OFF"
-		greenled["text"] = "GREEN LED ON"
+		toggle_leds(0,0,1)
+
 
 def ledToggle2():
 	if white.is_lit:
-		white.off()
-		whiteled["text"] = "WHITE LED OFF"
+		toggle_leds(0,0,0)
 	else:
-		white.on()
-		green.off()
-		greenled["text"] = "GREEN LED OFF"
-		red.off()
-		redled["text"]= "RED LED OFF"
-		whiteled["text"] = "WHITE LED ON"
+		toggle_leds(0,1,0)
+
 
 def close():
     RPi.GPIO.cleanup()
