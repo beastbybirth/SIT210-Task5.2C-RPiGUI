@@ -12,27 +12,27 @@ win = Tk()
 win.title("LED Toggler")
 myFont = tkinter.font.Font(family= "hello", size = 12, weight = "bold")
 
-def toggle_leds(red, white, green):
-	if red == 1: 
-		red.on()
-		redled["text"] = "RED LED ON"
-	else:
-		red.off()
-		redled["text"] = "RED LED OFF"
+def toggle_leds(red, white, green): 		# function to make leds turned on and off
+	if red == 1:				# if red button is on then following functions are performed
+		red.on()			# red led pin = high
+		redled["text"] = "RED LED ON"	# change GUI text
+	else:					# if red button is off then following functions are performed
+		red.off()			# red led pin = low
+		redled["text"] = "RED LED OFF"	# change GUI text
 		
-	if white == 1:
-		white.on()
-		whiteled["text"] = "WHITE LED ON"
-	else:
-		white.off()
-		whiteled["text"] = "WHITE LED OFF"
+	if white == 1:				# if white button is on then following functions are performed
+		white.on()			# white led pin = high
+		whiteled["text"] = "WHITE LED ON" # change GUI text
+	else:					# if white button is off then following functions are performed
+		white.off()			# white led pin = low
+		whiteled["text"] = "WHITE LED OFF" # change GUI text
 		
-	if green == 1:
-		green.on()
-		greenled["text"] = "GREEN LED ON"
-	else:
-		green.off()
-		greenled["text"] = "GREEN LED OFF"
+	if green == 1:				# if green button is on then following functions are performed
+		green.on()			# green led pin = high
+		greenled["text"] = "GREEN LED ON" # change GUI text
+	else:					# if green button is off then following functions are performed
+		green.off()			# green led pin = low
+		greenled["text"] = "GREEN LED OFF" # change GUI text
 		
 def ledToggle():
     if red.is_lit:
